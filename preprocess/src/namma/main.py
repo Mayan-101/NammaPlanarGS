@@ -20,21 +20,20 @@ def extract_drive_id(drive_url_or_id: str) -> str:
 
 def download_from_drive(drive_url_or_id: str, output_path: str = "downloaded_video.mp4") -> str:
     """
-    Downloads a video file from Google Drive using gdown.
+    Downloads a video file from Google Drive using gdown by file ID.
     """
     file_id = extract_drive_id(drive_url_or_id)
-    gdown_url = f"https://drive.google.com/uc?id={file_id}"
 
-    print(f"Downloading video from Google Drive...")
-    # fuzzy=True helps gdown extract the file ID even from messy URLs
-    downloaded_file = gdown.download(gdown_url, output_path, quiet=False, fuzzy=True)
+    print(f"Downloading video from Google Drive (ID: {file_id})...")
+    
+    # Passing id= directly handles confirmation prompts and avoids URL construction issues
+    downloaded_file = gdown.download(id=file_id, output=output_path, quiet=False)
 
     if not downloaded_file or not os.path.isfile(downloaded_file):
         raise RuntimeError("Failed to download video from Google Drive.")
 
     print(f"Video saved to: {downloaded_file}")
     return downloaded_file
-
 
 def extract_frames(
     video_path: str,
