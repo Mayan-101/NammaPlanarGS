@@ -37,7 +37,7 @@ def download_from_drive(drive_url_or_id: str, output_path: str = "downloaded_vid
 
 def extract_frames(
     video_path: str,
-    output_dir: str = "frames",
+    output_dir: str = "images",
     fps: float | None = None,
     use_gpu: bool = False,
 ):
@@ -86,7 +86,7 @@ def extract_frames(
 def process_drive_video(
     drive_url_or_id: str,
     video_save_path: str = "input_video.mp4",
-    frames_dir: str = "frames",
+    frames_dir: str = "images",
     fps: float | None = None,
     use_gpu: bool = False,
     delete_video_after: bool = False,
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     process_drive_video(
         drive_url_or_id=DRIVE_LINK,
         video_save_path="VID20261023160251.mp4",
-        frames_dir="frames",
+        frames_dir="images",
         fps=None,         # e.g., set to 1 for 1 frame/sec, or None for all frames
         use_gpu=True,    # Set to True if your FFmpeg has CUDA support
         delete_video_after=True  # Set to True if you want to free up disk space after extraction
