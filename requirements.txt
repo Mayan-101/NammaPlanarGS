@@ -31,3 +31,4 @@ pycocotools
 timm
 gdown
 ffmpeg-python
+pycolmap
