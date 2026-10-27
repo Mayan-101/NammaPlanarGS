@@ -1,0 +1,31 @@
+# Keep the tested Torch/CUDA pairing explicit.
+torch==2.11.0+cu130
+torchvision==0.26.0+cu130
+
+# Compatibility constraints used by our worker.
+numpy==1.26.4
+open3d==0.19.0
+opencv-python<4.12
+transformers==4.44.2
+huggingface-hub<1
+gradio<5
+setuptools<81
+
+# Build tools: native extensions are installed separately with --no-build-isolation.
+wheel
+ninja
+cmake
+packaging
+
+# Remaining requirements from the pinned PlanarGS source.
+roma
+matplotlib
+scipy
+einops
+trimesh
+tensorboard
+plyfile
+lpips
+yapf
+pycocotools
+timm

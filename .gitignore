@@ -1,0 +1,8 @@
+*.pyc
+.vscode
+build
+output
+*.pth
+submodules/groundedsam
+ckpt*.so
+*.mp4
